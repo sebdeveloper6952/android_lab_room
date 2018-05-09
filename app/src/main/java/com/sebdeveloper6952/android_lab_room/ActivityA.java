@@ -1,8 +1,11 @@
 package com.sebdeveloper6952.android_lab_room;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -39,8 +42,17 @@ public class ActivityA extends AppCompatActivity
         setContentView(R.layout.lyt_activity_a);
         // lista para guardar data de weather a mostrar
         weatherDataList = new ArrayList<>();
-        // list view
+        // list view, crear adapter y asignar, crear onClick
         lv_data = findViewById(R.id.lv_data);
+        lv_data.setOnItemClickListener(new AdapterView.OnItemClickListener()
+        {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id)
+            {
+                Intent intent = new Intent(ActivityA.this, ActivityB.class);
+                startActivity(intent);
+            }
+        });
         final ArrayAdapter<String> adapter = new ArrayAdapter<String>(
                 ActivityA.this, android.R.layout.simple_list_item_1,
                 weatherDataList
