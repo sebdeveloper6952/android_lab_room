@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">android_lab_room</string>
+    <string name="activity_a">Activity A</string>
+    <string name="activity_b">Activity B</string>
 </resources>
