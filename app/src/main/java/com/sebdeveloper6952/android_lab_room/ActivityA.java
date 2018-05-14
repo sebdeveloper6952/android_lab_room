@@ -85,11 +85,13 @@ public class ActivityA extends AppCompatActivity
                             weatherDataList.add("pressure: " + obj.getString("pressure"));
                             weatherDataList.add("humidity: " + obj.getString("humidity"));
                             weatherDataList.add("temp_min: " + obj.getString("temp_min"));
-                            weatherDataList.add("tem_max: " + obj.getString("temp_max"));
+                            weatherDataList.add("temp_max: " + obj.getString("temp_max"));
                             adapter.notifyDataSetChanged();
                         }
                         catch (JSONException e)
                         {
+                            Toast.makeText(ActivityA.this, "Error en Request...",
+                                    Toast.LENGTH_LONG).show();
                             e.printStackTrace();
                         }
                     }
